@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Many To One</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link href="{% static 'css/Myfile.css' %}" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <h1 style="color: red">Many To One Relations....!!</h1>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+        {% for i in items %}
+        <h2>{{ i.tname }}</h2>
+        {%  for player in i.player_set.all %}
+        {{ player.pname }}<br/>
+        {% endfor %}
+        {% endfor %}
+    </div>
+</div>
+</div>
+</body>
+</html>
